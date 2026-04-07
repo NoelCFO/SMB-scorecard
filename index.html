@@ -8,380 +8,122 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:100vh;}
-
-:root{
-  --green:#155228;
-  --green-lt:#217A3C;
-  --gold:#C9962A;
-  --gold-lt:#E4B84A;
-  --cream:#F9F5EE;
-  --red:#C0392B;
-}
-
-/* HEADER */
-.header{
-  background:var(--green);
-  padding:20px 40px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-.header-brand{
-  font-family:'Playfair Display',serif;
-  font-size:20px;font-weight:700;color:var(--gold);
-}
+:root{--green:#155228;--green-lt:#217A3C;--gold:#C9962A;--gold-lt:#E4B84A;--cream:#F9F5EE;--red:#C0392B;}
+.header{background:var(--green);padding:20px 40px;display:flex;align-items:center;justify-content:space-between;}
+.header-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);}
 .header-brand span{color:#fff;font-size:14px;display:block;font-family:'Nunito',sans-serif;font-weight:600;letter-spacing:0.08em;}
-
-/* HERO */
-.hero{
-  background:var(--green);
-  padding:60px 40px 80px;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,150,42,0.08),transparent 65%);
-}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,0.1);
-  border:1px solid rgba(201,150,42,0.3);
-  border-radius:100px;padding:8px 20px;
-  font-size:13px;font-weight:700;color:var(--gold);
-  letter-spacing:0.1em;text-transform:uppercase;
-  margin-bottom:28px;
-}
+.hero{background:var(--green);padding:60px 40px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(201,150,42,0.08),transparent 65%);}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);border:1px solid rgba(201,150,42,0.3);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:28px;}
 .badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
-.hero h1{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(36px,5vw,64px);
-  font-weight:900;color:#fff;
-  line-height:1.1;margin-bottom:20px;
-  position:relative;z-index:1;
-}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px;position:relative;z-index:1;}
 .hero h1 em{color:var(--gold);font-style:italic;}
-.hero p{
-  font-size:20px;color:rgba(255,255,255,0.75);
-  max-width:640px;margin:0 auto 36px;
-  line-height:1.75;position:relative;z-index:1;
-}
-.hero-stats{
-  display:flex;gap:48px;justify-content:center;
-  flex-wrap:wrap;position:relative;z-index:1;
-}
+.hero p{font-size:20px;color:rgba(255,255,255,0.75);max-width:640px;margin:0 auto 36px;line-height:1.75;position:relative;z-index:1;}
+.hero-stats{display:flex;gap:48px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
 .hero-stat{text-align:center;}
 .hs-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--gold);line-height:1;}
 .hs-l{font-size:13px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px;}
-
-/* MAIN CONTAINER */
 .container{max-width:760px;margin:-40px auto 0;padding:0 24px 80px;position:relative;z-index:2;}
-
-/* PROGRESS */
-.progress-wrap{
-  background:#fff;border-radius:16px 16px 0 0;
-  padding:28px 36px 20px;
-  border-bottom:1px solid rgba(21,82,40,0.08);
-}
-.progress-header{
-  display:flex;justify-content:space-between;
-  align-items:center;margin-bottom:14px;
-}
+.progress-wrap{background:#fff;border-radius:16px 16px 0 0;padding:28px 36px 20px;border-bottom:1px solid rgba(21,82,40,0.08);}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;}
 .progress-label{font-size:14px;font-weight:700;color:var(--green);letter-spacing:0.06em;text-transform:uppercase;}
 .progress-count{font-size:14px;font-weight:700;color:#666;}
-.progress-bar{
-  height:8px;background:#EDE8DF;border-radius:8px;overflow:hidden;
-}
-.progress-fill{
-  height:100%;
-  background:linear-gradient(90deg,var(--green),var(--green-lt));
-  border-radius:8px;
-  transition:width .5s ease;
-}
-.progress-categories{
-  display:flex;gap:6px;margin-top:10px;
-}
-.prog-cat{
-  flex:1;height:4px;border-radius:4px;
-  background:#EDE8DF;transition:background .3s;
-}
+.progress-bar{height:8px;background:#EDE8DF;border-radius:8px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--green-lt));border-radius:8px;transition:width .5s ease;}
+.progress-categories{display:flex;gap:6px;margin-top:10px;}
+.prog-cat{flex:1;height:4px;border-radius:4px;background:#EDE8DF;transition:background .3s;}
 .prog-cat.active{background:var(--gold);}
 .prog-cat.done{background:var(--green);}
-
-/* QUESTION CARD */
-.question-card{
-  background:#fff;
-  padding:40px 36px;
-  animation:slideIn .4s ease;
-}
+.question-card{background:#fff;padding:40px 36px;animation:slideIn .4s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.q-category{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(21,82,40,0.06);
-  border:1px solid rgba(21,82,40,0.12);
-  border-radius:100px;padding:5px 14px;
-  font-size:12px;font-weight:700;color:var(--green);
-  letter-spacing:0.1em;text-transform:uppercase;
-  margin-bottom:20px;
-}
-.q-number{
-  font-size:13px;color:#aaa;font-weight:600;
-  margin-bottom:10px;
-}
-.q-text{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(22px,3vw,30px);
-  font-weight:700;color:#111;
-  line-height:1.3;margin-bottom:32px;
-}
+.q-category{display:inline-flex;align-items:center;gap:8px;background:rgba(21,82,40,0.06);border:1px solid rgba(21,82,40,0.12);border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
+.q-number{font-size:13px;color:#aaa;font-weight:600;margin-bottom:10px;}
+.q-text{font-family:'Playfair Display',serif;font-size:clamp(22px,3vw,30px);font-weight:700;color:#111;line-height:1.3;margin-bottom:32px;}
 .q-text em{color:var(--green);font-style:normal;}
-
-/* OPTIONS */
 .options{display:flex;flex-direction:column;gap:12px;}
-.option{
-  display:flex;align-items:center;gap:16px;
-  padding:18px 22px;
-  background:var(--cream);
-  border:2px solid transparent;
-  border-radius:10px;cursor:pointer;
-  transition:all .25s;
-}
-.option:hover{
-  border-color:var(--gold);
-  background:rgba(201,150,42,0.05);
-  transform:translateX(4px);
-}
-.option.selected{
-  border-color:var(--green);
-  background:rgba(21,82,40,0.05);
-}
-.option-radio{
-  width:22px;height:22px;border-radius:50%;
-  border:2px solid #ccc;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  transition:all .25s;
-}
-.option.selected .option-radio{
-  border-color:var(--green);
-  background:var(--green);
-}
-.option.selected .option-radio::after{
-  content:'';width:8px;height:8px;
-  border-radius:50%;background:#fff;
-}
+.option{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--cream);border:2px solid transparent;border-radius:10px;cursor:pointer;transition:all .25s;}
+.option:hover{border-color:var(--gold);background:rgba(201,150,42,0.05);transform:translateX(4px);}
+.option.selected{border-color:var(--green);background:rgba(21,82,40,0.05);}
+.option-radio{width:22px;height:22px;border-radius:50%;border:2px solid #ccc;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .25s;}
+.option.selected .option-radio{border-color:var(--green);background:var(--green);}
+.option.selected .option-radio::after{content:'';width:8px;height:8px;border-radius:50%;background:#fff;}
 .option-text{font-size:17px;font-weight:600;color:#111;}
-.option-score{
-  margin-left:auto;font-size:13px;
-  font-weight:700;color:#aaa;
-  flex-shrink:0;
-}
-.option.selected .option-score{color:var(--green);}
-
-/* NAV BUTTONS */
-.q-nav{
-  display:flex;justify-content:space-between;
-  align-items:center;padding:20px 36px 36px;
-  background:#fff;border-radius:0 0 16px 16px;
-}
-.btn-prev{
-  background:transparent;border:2px solid #DDD;
-  color:#666;font-weight:700;font-size:15px;
-  padding:12px 24px;border-radius:8px;cursor:pointer;
-  transition:all .2s;
-}
+.q-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 36px 36px;background:#fff;border-radius:0 0 16px 16px;}
+.btn-prev{background:transparent;border:2px solid #DDD;color:#666;font-weight:700;font-size:15px;padding:12px 24px;border-radius:8px;cursor:pointer;transition:all .2s;}
 .btn-prev:hover{border-color:var(--green);color:var(--green);}
 .btn-prev:disabled{opacity:.3;cursor:not-allowed;}
-.btn-next{
-  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
-  color:#111;font-weight:800;font-size:16px;
-  padding:14px 36px;border-radius:8px;border:none;
-  cursor:pointer;transition:all .3s;
-  box-shadow:0 4px 16px rgba(201,150,42,0.3);
-}
+.btn-next{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#111;font-weight:800;font-size:16px;padding:14px 36px;border-radius:8px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(201,150,42,0.3);}
 .btn-next:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,150,42,0.4);}
 .btn-next:disabled{opacity:.4;cursor:not-allowed;transform:none;}
-
-/* RESULTS */
 .results{display:none;animation:slideIn .5s ease;}
-.results-header{
-  background:var(--green);
-  border-radius:16px 16px 0 0;
-  padding:48px 36px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.results-header::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,rgba(201,150,42,0.08),transparent 65%);
-}
-.score-circle{
-  width:160px;height:160px;border-radius:50%;
-  border:6px solid rgba(255,255,255,0.15);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  margin:0 auto 24px;
-  position:relative;z-index:1;
-  background:rgba(255,255,255,0.05);
-}
-.score-num{
-  font-family:'Playfair Display',serif;
-  font-size:52px;font-weight:900;
-  line-height:1;
-}
+.results-header{background:var(--green);border-radius:16px 16px 0 0;padding:48px 36px;text-align:center;position:relative;overflow:hidden;}
+.results-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,150,42,0.08),transparent 65%);}
+.score-circle{width:160px;height:160px;border-radius:50%;border:6px solid rgba(255,255,255,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;background:rgba(255,255,255,0.05);}
+.score-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;line-height:1;}
 .score-label{font-size:13px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.08em;}
-.results-title{
-  font-family:'Playfair Display',serif;
-  font-size:32px;font-weight:700;color:#fff;
-  margin-bottom:12px;position:relative;z-index:1;
-}
-.results-subtitle{
-  font-size:18px;color:rgba(255,255,255,0.7);
-  position:relative;z-index:1;
-}
-
-.results-body{
-  background:#fff;padding:40px 36px;
-}
-.results-body h3{
-  font-family:'Playfair Display',serif;
-  font-size:24px;color:var(--green);
-  margin-bottom:20px;
-}
-
-/* AREA RESULTS */
+.results-title{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:12px;position:relative;z-index:1;}
+.results-subtitle{font-size:18px;color:rgba(255,255,255,0.7);position:relative;z-index:1;}
+.results-body{background:#fff;padding:40px 36px;}
+.results-body h3{font-family:'Playfair Display',serif;font-size:24px;color:var(--green);margin-bottom:20px;}
 .area-results{display:flex;flex-direction:column;gap:14px;margin-bottom:36px;}
-.area-item{
-  background:var(--cream);border-radius:10px;
-  padding:16px 20px;
-  display:flex;align-items:center;gap:16px;
-}
+.area-item{background:var(--cream);border-radius:10px;padding:16px 20px;display:flex;align-items:center;gap:16px;}
 .area-icon{font-size:24px;flex-shrink:0;}
 .area-content{flex:1;}
 .area-name{font-size:15px;font-weight:700;color:#111;margin-bottom:4px;}
 .area-bar-wrap{height:8px;background:#EDE8DF;border-radius:8px;overflow:hidden;}
 .area-bar{height:100%;border-radius:8px;transition:width .8s ease;}
 .area-score-label{font-size:12px;font-weight:700;margin-top:4px;}
-
-/* BLEEDING AREAS */
-.bleeding-section{
-  background:rgba(192,57,43,0.05);
-  border:2px solid rgba(192,57,43,0.15);
-  border-radius:12px;padding:24px;margin-bottom:28px;
-}
-.bleeding-title{
-  font-size:14px;font-weight:800;color:var(--red);
-  letter-spacing:0.1em;text-transform:uppercase;
-  margin-bottom:14px;
-}
+.bleeding-section{background:rgba(192,57,43,0.05);border:2px solid rgba(192,57,43,0.15);border-radius:12px;padding:24px;margin-bottom:28px;}
+.bleeding-title{font-size:14px;font-weight:800;color:var(--red);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;}
 .bleeding-list{list-style:none;}
-.bleeding-list li{
-  display:flex;gap:10px;align-items:flex-start;
-  padding:8px 0;border-bottom:1px solid rgba(192,57,43,0.1);
-  font-size:15px;color:#111;font-weight:600;
-}
+.bleeding-list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(192,57,43,0.1);font-size:15px;color:#111;font-weight:600;}
 .bleeding-list li:last-child{border-bottom:none;}
 .bl-x{color:var(--red);font-size:16px;flex-shrink:0;font-weight:800;}
-
-/* STRONG AREAS */
-.strong-section{
-  background:rgba(21,82,40,0.05);
-  border:2px solid rgba(21,82,40,0.12);
-  border-radius:12px;padding:24px;margin-bottom:28px;
-}
-.strong-title{
-  font-size:14px;font-weight:800;color:var(--green);
-  letter-spacing:0.1em;text-transform:uppercase;
-  margin-bottom:14px;
-}
+.strong-section{background:rgba(21,82,40,0.05);border:2px solid rgba(21,82,40,0.12);border-radius:12px;padding:24px;margin-bottom:28px;}
+.strong-title{font-size:14px;font-weight:800;color:var(--green);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px;}
 .strong-list{list-style:none;}
-.strong-list li{
-  display:flex;gap:10px;align-items:flex-start;
-  padding:8px 0;border-bottom:1px solid rgba(21,82,40,0.08);
-  font-size:15px;color:#111;font-weight:600;
-}
+.strong-list li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(21,82,40,0.08);font-size:15px;color:#111;font-weight:600;}
 .strong-list li:last-child{border-bottom:none;}
 .bl-check{color:var(--green);font-size:16px;flex-shrink:0;font-weight:800;}
-
-/* CTA SECTION */
-.results-cta{
-  background:var(--green);
-  border-radius:0 0 16px 16px;
-  padding:48px 36px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.results-cta::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,rgba(201,150,42,0.08),transparent 65%);
-}
-.results-cta h2{
-  font-family:'Playfair Display',serif;
-  font-size:32px;font-weight:700;color:#fff;
-  margin-bottom:14px;position:relative;z-index:1;
-}
+.results-cta{background:var(--green);border-radius:0 0 16px 16px;padding:48px 36px;text-align:center;position:relative;overflow:hidden;}
+.results-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,150,42,0.08),transparent 65%);}
+.results-cta h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:14px;position:relative;z-index:1;}
 .results-cta h2 em{color:var(--gold);font-style:italic;}
-.results-cta p{
-  font-size:18px;color:rgba(255,255,255,0.7);
-  max-width:520px;margin:0 auto 32px;
-  line-height:1.75;position:relative;z-index:1;
-}
-.cta-btn{
-  display:inline-flex;align-items:center;gap:12px;
-  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
-  color:#111;font-weight:800;font-size:18px;
-  padding:20px 48px;border-radius:8px;border:none;
-  cursor:pointer;transition:all .3s;
-  box-shadow:0 8px 32px rgba(201,150,42,0.35);
-  position:relative;z-index:1;
-}
+.results-cta p{font-size:18px;color:rgba(255,255,255,0.7);max-width:520px;margin:0 auto 32px;line-height:1.75;position:relative;z-index:1;}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#111;font-weight:800;font-size:18px;padding:20px 48px;border-radius:8px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 8px 32px rgba(201,150,42,0.35);position:relative;z-index:1;}
 .cta-btn:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(201,150,42,0.5);}
-.retake-btn{
-  display:inline-block;margin-top:16px;
-  font-size:14px;color:rgba(255,255,255,0.45);
-  cursor:pointer;text-decoration:underline;
-  position:relative;z-index:1;
-  background:none;border:none;
-}
+.retake-btn{display:inline-block;margin-top:16px;font-size:14px;color:rgba(255,255,255,0.45);cursor:pointer;text-decoration:underline;position:relative;z-index:1;background:none;border:none;}
 .retake-btn:hover{color:rgba(255,255,255,0.8);}
-
-/* INTRO SCREEN */
-.intro{
-  background:#fff;border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 8px 40px rgba(21,82,40,0.1);
-}
+.intro{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(21,82,40,0.1);}
 .intro-body{padding:48px 40px;text-align:center;}
 .intro-icon{font-size:64px;margin-bottom:20px;}
-.intro-body h2{
-  font-family:'Playfair Display',serif;
-  font-size:clamp(28px,3vw,40px);font-weight:700;
-  color:var(--green);margin-bottom:16px;
-}
+.intro-body h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--green);margin-bottom:16px;}
 .intro-body p{font-size:18px;color:#444;line-height:1.8;max-width:560px;margin:0 auto 32px;}
-.intro-features{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:14px;margin-bottom:36px;
-  text-align:left;
-}
-.intro-feature{
-  display:flex;gap:12px;align-items:flex-start;
-  background:var(--cream);border-radius:8px;padding:14px;
-}
+.intro-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:36px;text-align:left;}
+.intro-feature{display:flex;gap:12px;align-items:flex-start;background:var(--cream);border-radius:8px;padding:14px;}
 .if-icon{font-size:20px;flex-shrink:0;}
 .if-text{font-size:14px;font-weight:600;color:#111;line-height:1.4;}
-.start-btn{
-  background:linear-gradient(135deg,var(--gold),var(--gold-lt));
-  color:#111;font-weight:800;font-size:18px;
-  padding:20px 56px;border-radius:8px;border:none;
-  cursor:pointer;transition:all .3s;
-  box-shadow:0 8px 32px rgba(201,150,42,0.35);
-}
+.start-btn{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#111;font-weight:800;font-size:18px;padding:20px 56px;border-radius:8px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 8px 32px rgba(201,150,42,0.35);}
 .start-btn:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(201,150,42,0.5);}
 .intro-note{font-size:13px;color:#aaa;margin-top:14px;}
-
+/* OPTIN GATE */
+.optin-gate{display:none;animation:slideIn .5s ease;border-radius:16px;overflow:hidden;box-shadow:0 8px 40px rgba(21,82,40,0.1);}
+.optin-header{background:var(--green);padding:48px 36px;text-align:center;position:relative;overflow:hidden;}
+.optin-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,150,42,0.08),transparent 65%);}
+.optin-lock{font-size:64px;margin-bottom:16px;position:relative;z-index:1;}
+.optin-header h2{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:#fff;margin-bottom:10px;position:relative;z-index:1;}
+.optin-header p{font-size:17px;color:rgba(255,255,255,0.75);position:relative;z-index:1;}
+.optin-body{background:#fff;padding:40px 36px;text-align:center;}
+.optin-form{display:flex;flex-direction:column;gap:14px;max-width:480px;margin:0 auto;}
+.optin-input{width:100%;padding:16px 20px;border:2px solid #DDD;border-radius:8px;font-size:16px;font-family:'Nunito',sans-serif;outline:none;transition:border-color .2s;box-sizing:border-box;}
+.optin-input:focus{border-color:var(--green);}
+.optin-submit{background:linear-gradient(135deg,var(--gold),var(--gold-lt));color:#111;font-weight:800;font-size:17px;padding:18px;border-radius:8px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 16px rgba(201,150,42,0.3);}
+.optin-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,150,42,0.4);}
+.optin-note{font-size:13px;color:#aaa;margin-top:4px;}
 @media(max-width:600px){
   .container{padding:0 16px 60px;}
-  .question-card,.q-nav,.progress-wrap,.results-body,.results-cta{padding:24px 20px;}
+  .question-card,.q-nav,.progress-wrap,.results-body,.results-cta,.optin-body,.optin-header{padding:24px 20px;}
   .results-header{padding:36px 20px;}
   .intro-body{padding:32px 20px;}
   .intro-features{grid-template-columns:1fr;}
@@ -393,10 +135,7 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
 <body>
 
 <div class="header">
-  <div class="header-brand">
-    True North Finance Group
-    <span>CFO Advisory for SMBs</span>
-  </div>
+  <div class="header-brand">True North Finance Group<span>CFO Advisory for SMBs</span></div>
   <div style="font-size:13px;color:rgba(255,255,255,0.5);font-weight:600;">Free Business Health Scorecard</div>
 </div>
 
@@ -414,7 +153,6 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
 
 <div class="container">
 
-  <!-- INTRO -->
   <div class="intro" id="intro">
     <div class="intro-body">
       <div class="intro-icon">🔍</div>
@@ -427,41 +165,17 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
         <div class="intro-feature"><span class="if-icon">🎯</span><div class="if-text">Get a personalized action plan</div></div>
       </div>
       <button class="start-btn" onclick="startQuiz()">Start My Free Assessment →</button>
-      <div class="intro-note">Takes 3 minutes. Enter your email to unlock your full score.</div>
+      <div class="intro-note">Takes 3 minutes. 100% free.</div>
     </div>
   </div>
 
-  <!-- OPTIN GATE -->
-  <div class="optin-gate" id="optin-gate">
-    <div class="results-header">
-      <div class="score-circle" style="border-color:rgba(255,255,255,0.3)">
-        <span style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold);">🔒</span>
-      </div>
-      <div class="results-title" style="color:#fff;">Your Score Is Ready!</div>
-      <div class="results-subtitle" style="color:rgba(255,255,255,0.75);">Enter your details below to unlock your full financial health report.</div>
-    </div>
-    <div class="optin-body">
-      <h3>Where should we send your results?</h3>
-      <p>Get your personalized SMB Financial Health Score plus a breakdown of exactly where your business is strong and where it is bleeding.</p>
-      <form class="optin-form" id="optin-form" style="display:flex;flex-direction:column;gap:14px;max-width:480px;margin:0 auto;width:100%;">
-        <input class="optin-input" type="text" name="name" placeholder="Your First Name" required style="width:100%;box-sizing:border-box;" />
-        <input class="optin-input" type="email" name="email" placeholder="Your Business Email" required style="width:100%;box-sizing:border-box;" />
-        <button class="optin-submit" type="submit">Unlock My Results →</button>
-        <div class="optin-note">🔒 No spam. Your results are private.</div>
-      </form>
-    </div>
-  </div>
-
-  <!-- QUIZ -->
   <div id="quiz" style="display:none;">
     <div class="progress-wrap">
       <div class="progress-header">
         <span class="progress-label" id="category-label">Revenue</span>
         <span class="progress-count" id="progress-count">1 of 12</span>
       </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill" style="width:8%"></div>
-      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:8%"></div></div>
       <div class="progress-categories" id="progress-cats"></div>
     </div>
     <div class="question-card" id="question-card"></div>
@@ -471,7 +185,22 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
     </div>
   </div>
 
-  <!-- RESULTS -->
+  <div class="optin-gate" id="optin-gate">
+    <div class="optin-header">
+      <div class="optin-lock">🔒</div>
+      <h2>Your Score Is Ready!</h2>
+      <p>Enter your details to unlock your full financial health report.</p>
+    </div>
+    <div class="optin-body">
+      <form class="optin-form" id="optin-form">
+        <input class="optin-input" type="text" name="name" placeholder="Your First Name" required />
+        <input class="optin-input" type="email" name="email" placeholder="Your Business Email" required />
+        <button class="optin-submit" type="submit">Unlock My Results →</button>
+        <div class="optin-note">🔒 No spam. Your results are private.</div>
+      </form>
+    </div>
+  </div>
+
   <div class="results" id="results">
     <div class="results-header">
       <div class="score-circle" id="score-circle">
@@ -495,9 +224,9 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
     </div>
     <div class="results-cta">
       <h2>Ready to Stop the Bleeding<br>in <em>Your</em> Business?</h2>
-      <p>Book a free 30-minute Financial Clarity Call with Noel. He will look at your specific numbers and show you exactly where the biggest opportunity is hiding right now.</p>
+      <p>Book a FREE Consultation with our Certified CFO Advisor. We'll look at your specific numbers, make sure we're the right fit, and show you exactly what we'll do to build a growing and more profitable business.</p>
       <button class="cta-btn" onclick="window.open('https://calendly.com/noel-truenorthfinancegroup/20-minute-right-fit-call?month=2026-03','_blank')">
-        📅 Book My Free Clarity Call with Noel
+        📅 Yes, I'm Ready For a Clarity Call
       </button>
       <br>
       <button class="retake-btn" onclick="retakeQuiz()">Retake the Assessment</button>
@@ -508,376 +237,161 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
 
 <script>
 const questions = [
-  // REVENUE (4 questions)
-  {
-    category: "Revenue",
-    icon: "📈",
-    area: "Lead Generation",
-    text: "How would you describe your flow of new leads and potential customers?",
-    options: [
-      { text: "Consistent and predictable — we always have a full pipeline", score: 10 },
-      { text: "Decent but could be better — some months are stronger than others", score: 7 },
-      { text: "Inconsistent — we have feast and famine cycles", score: 4 },
-      { text: "Struggling — we are not generating enough leads", score: 1 }
-    ]
-  },
-  {
-    category: "Revenue",
-    icon: "🎯",
-    area: "Pricing Strategy",
-    text: "When did you last review and strategically adjust your pricing?",
-    options: [
-      { text: "Within the last 6 months — we review pricing regularly", score: 10 },
-      { text: "About a year ago — we are somewhat up to date", score: 7 },
-      { text: "A few years ago — it has been a while", score: 4 },
-      { text: "We have never formally reviewed our pricing strategy", score: 1 }
-    ]
-  },
-  {
-    category: "Revenue",
-    icon: "🔄",
-    area: "Customer Retention",
-    text: "How well does your business keep existing customers coming back?",
-    options: [
-      { text: "Excellent — most customers return and refer others", score: 10 },
-      { text: "Good — most stay but we could do better with referrals", score: 7 },
-      { text: "Average — we lose more customers than we would like", score: 4 },
-      { text: "Poor — customer churn is a real problem for us", score: 1 }
-    ]
-  },
-  {
-    category: "Revenue",
-    icon: "💵",
-    area: "Average Transaction Value",
-    text: "Do you actively work to increase the average value of each sale?",
-    options: [
-      { text: "Yes — we have clear upsell and cross-sell strategies in place", score: 10 },
-      { text: "Sometimes — we do it occasionally but not systematically", score: 7 },
-      { text: "Rarely — we mostly just take the initial order", score: 4 },
-      { text: "Never — we have not thought about this", score: 1 }
-    ]
-  },
-  // PROFIT (4 questions)
-  {
-    category: "Profit",
-    icon: "📉",
-    area: "Gross Margin",
-    text: "Do you know your gross profit margin and is it where it should be?",
-    options: [
-      { text: "Yes — I know it exactly and it is healthy and growing", score: 10 },
-      { text: "Somewhat — I have a rough idea but do not track it closely", score: 7 },
-      { text: "Not really — I know sales are up but margins feel thin", score: 4 },
-      { text: "No idea — I honestly do not know my gross margin", score: 1 }
-    ]
-  },
-  {
-    category: "Profit",
-    icon: "💼",
-    area: "Payroll Efficiency",
-    text: "How confident are you that your payroll costs are optimized for your revenue level?",
-    options: [
-      { text: "Very confident — we are staffed right for our revenue", score: 10 },
-      { text: "Fairly confident — some roles might need review", score: 7 },
-      { text: "Not sure — payroll feels high but I am not certain", score: 4 },
-      { text: "Concerned — payroll is eating too much of our revenue", score: 1 }
-    ]
-  },
-  {
-    category: "Profit",
-    icon: "🏢",
-    area: "Overhead Control",
-    text: "How well do you manage and control your overhead expenses?",
-    options: [
-      { text: "Very well — we review expenses regularly and cut waste", score: 10 },
-      { text: "Reasonably well — we watch the big items closely", score: 7 },
-      { text: "Not great — expenses have crept up and I am not sure where", score: 4 },
-      { text: "Poorly — overhead is out of control and growing", score: 1 }
-    ]
-  },
-  {
-    category: "Profit",
-    icon: "📊",
-    area: "Financial Reporting",
-    text: "How current and useful are your financial reports for decision making?",
-    options: [
-      { text: "Current and useful — I get clear reports and act on them", score: 10 },
-      { text: "Somewhat current — reports come in but I could use more detail", score: 7 },
-      { text: "Usually late — reports are always a few weeks behind", score: 4 },
-      { text: "Non-existent — I make decisions without clear financial data", score: 1 }
-    ]
-  },
-  // CASH FLOW (4 questions)
-  {
-    category: "Cash Flow",
-    icon: "💸",
-    area: "Cash Flow Predictability",
-    text: "How predictable is your cash flow from month to month?",
-    options: [
-      { text: "Very predictable — I know 90 days ahead what cash will look like", score: 10 },
-      { text: "Somewhat predictable — I can see 30 days ahead most of the time", score: 7 },
-      { text: "Unpredictable — I am often surprised by cash shortfalls", score: 4 },
-      { text: "Crisis mode — cash flow keeps me up at night every month", score: 1 }
-    ]
-  },
-  {
-    category: "Cash Flow",
-    icon: "⏰",
-    area: "Accounts Receivable",
-    text: "How quickly do your customers typically pay their invoices?",
-    options: [
-      { text: "Within 30 days — we have strong collections processes", score: 10 },
-      { text: "30-45 days — mostly on time with a few slow payers", score: 7 },
-      { text: "45-60 days — collections is an ongoing challenge", score: 4 },
-      { text: "60+ days — slow payments are seriously hurting our cash", score: 1 }
-    ]
-  },
-  {
-    category: "Cash Flow",
-    icon: "🏦",
-    area: "Debt Management",
-    text: "How well structured is your business debt and credit?",
-    options: [
-      { text: "Well structured — debt is strategic and manageable", score: 10 },
-      { text: "Acceptable — debt is manageable but could be optimized", score: 7 },
-      { text: "Concerning — debt payments are straining cash flow", score: 4 },
-      { text: "Critical — debt is a serious threat to the business", score: 1 }
-    ]
-  },
-  {
-    category: "Cash Flow",
-    icon: "🎯",
-    area: "Financial Planning",
-    text: "Do you have a clear financial plan and budget for the next 12 months?",
-    options: [
-      { text: "Yes — detailed budget with monthly targets and regular reviews", score: 10 },
-      { text: "Somewhat — a rough plan but not detailed or closely tracked", score: 7 },
-      { text: "Minimal — we operate month to month without a real plan", score: 4 },
-      { text: "No plan — we react to whatever comes our way financially", score: 1 }
-    ]
-  }
+  {category:"Revenue",icon:"📈",area:"Lead Generation",text:"How would you describe your flow of new leads and potential customers?",options:[{text:"Consistent and predictable — we always have a full pipeline",score:10},{text:"Decent but could be better — some months are stronger than others",score:7},{text:"Inconsistent — we have feast and famine cycles",score:4},{text:"Struggling — we are not generating enough leads",score:1}]},
+  {category:"Revenue",icon:"🎯",area:"Pricing Strategy",text:"When did you last review and strategically adjust your pricing?",options:[{text:"Within the last 6 months — we review pricing regularly",score:10},{text:"About a year ago — we are somewhat up to date",score:7},{text:"A few years ago — it has been a while",score:4},{text:"We have never formally reviewed our pricing strategy",score:1}]},
+  {category:"Revenue",icon:"🔄",area:"Customer Retention",text:"How well does your business keep existing customers coming back?",options:[{text:"Excellent — most customers return and refer others",score:10},{text:"Good — most stay but we could do better with referrals",score:7},{text:"Average — we lose more customers than we would like",score:4},{text:"Poor — customer churn is a real problem for us",score:1}]},
+  {category:"Revenue",icon:"💵",area:"Average Transaction Value",text:"Do you actively work to increase the average value of each sale?",options:[{text:"Yes — we have clear upsell and cross-sell strategies in place",score:10},{text:"Sometimes — we do it occasionally but not systematically",score:7},{text:"Rarely — we mostly just take the initial order",score:4},{text:"Never — we have not thought about this",score:1}]},
+  {category:"Profit",icon:"📉",area:"Gross Margin",text:"Do you know your gross profit margin and is it where it should be?",options:[{text:"Yes — I know it exactly and it is healthy and growing",score:10},{text:"Somewhat — I have a rough idea but do not track it closely",score:7},{text:"Not really — I know sales are up but margins feel thin",score:4},{text:"No idea — I honestly do not know my gross margin",score:1}]},
+  {category:"Profit",icon:"💼",area:"Payroll Efficiency",text:"How confident are you that your payroll costs are optimized for your revenue level?",options:[{text:"Very confident — we are staffed right for our revenue",score:10},{text:"Fairly confident — some roles might need review",score:7},{text:"Not sure — payroll feels high but I am not certain",score:4},{text:"Concerned — payroll is eating too much of our revenue",score:1}]},
+  {category:"Profit",icon:"🏢",area:"Overhead Control",text:"How well do you manage and control your overhead expenses?",options:[{text:"Very well — we review expenses regularly and cut waste",score:10},{text:"Reasonably well — we watch the big items closely",score:7},{text:"Not great — expenses have crept up and I am not sure where",score:4},{text:"Poorly — overhead is out of control and growing",score:1}]},
+  {category:"Profit",icon:"📊",area:"Financial Reporting",text:"How current and useful are your financial reports for decision making?",options:[{text:"Current and useful — I get clear reports and act on them",score:10},{text:"Somewhat current — reports come in but I could use more detail",score:7},{text:"Usually late — reports are always a few weeks behind",score:4},{text:"Non-existent — I make decisions without clear financial data",score:1}]},
+  {category:"Cash Flow",icon:"💸",area:"Cash Flow Predictability",text:"How predictable is your cash flow from month to month?",options:[{text:"Very predictable — I know 90 days ahead what cash will look like",score:10},{text:"Somewhat predictable — I can see 30 days ahead most of the time",score:7},{text:"Unpredictable — I am often surprised by cash shortfalls",score:4},{text:"Crisis mode — cash flow keeps me up at night every month",score:1}]},
+  {category:"Cash Flow",icon:"⏰",area:"Accounts Receivable",text:"How quickly do your customers typically pay their invoices?",options:[{text:"Within 30 days — we have strong collections processes",score:10},{text:"30-45 days — mostly on time with a few slow payers",score:7},{text:"45-60 days — collections is an ongoing challenge",score:4},{text:"60+ days — slow payments are seriously hurting our cash",score:1}]},
+  {category:"Cash Flow",icon:"🏦",area:"Debt Management",text:"How well structured is your business debt and credit?",options:[{text:"Well structured — debt is strategic and manageable",score:10},{text:"Acceptable — debt is manageable but could be optimized",score:7},{text:"Concerning — debt payments are straining cash flow",score:4},{text:"Critical — debt is a serious threat to the business",score:1}]},
+  {category:"Cash Flow",icon:"🎯",area:"Financial Planning",text:"Do you have a clear financial plan and budget for the next 12 months?",options:[{text:"Yes — detailed budget with monthly targets and regular reviews",score:10},{text:"Somewhat — a rough plan but not detailed or closely tracked",score:7},{text:"Minimal — we operate month to month without a real plan",score:4},{text:"No plan — we react to whatever comes our way financially",score:1}]}
 ];
 
-let currentQ = 0;
-let answers = [];
-let categoryScores = { Revenue: [], Profit: [], 'Cash Flow': [] };
+let currentQ=0,answers=[];
+const categories=['Revenue','Profit','Cash Flow'];
 
-const categories = ['Revenue', 'Profit', 'Cash Flow'];
-const categoryColors = { Revenue: '#C9962A', Profit: '#155228', 'Cash Flow': '#2E7D52' };
-
-function startQuiz() {
-  document.getElementById('intro').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
+function startQuiz(){
+  document.getElementById('intro').style.display='none';
+  document.getElementById('quiz').style.display='block';
   buildProgressCats();
   showQuestion(0);
 }
 
-function buildProgressCats() {
-  const cats = document.getElementById('progress-cats');
-  categories.forEach((c, i) => {
-    const d = document.createElement('div');
-    d.className = 'prog-cat';
-    d.id = 'prog-cat-' + i;
-    d.title = c;
+function buildProgressCats(){
+  const cats=document.getElementById('progress-cats');
+  categories.forEach((c,i)=>{
+    const d=document.createElement('div');
+    d.className='prog-cat';d.id='prog-cat-'+i;d.title=c;
     cats.appendChild(d);
   });
 }
 
-function updateProgress() {
-  const pct = ((currentQ) / questions.length) * 100;
-  document.getElementById('progress-fill').style.width = pct + '%';
-  document.getElementById('progress-count').textContent = (currentQ + 1) + ' of ' + questions.length;
-  document.getElementById('category-label').textContent = questions[currentQ].category + ' Health';
-
-  categories.forEach((c, i) => {
-    const el = document.getElementById('prog-cat-' + i);
-    const qsInCat = questions.filter(q => q.category === c);
-    const firstIdx = questions.findIndex(q => q.category === c);
-    const lastIdx = firstIdx + qsInCat.length - 1;
-    if (currentQ > lastIdx) el.className = 'prog-cat done';
-    else if (currentQ >= firstIdx) el.className = 'prog-cat active';
-    else el.className = 'prog-cat';
+function updateProgress(){
+  const pct=((currentQ)/questions.length)*100;
+  document.getElementById('progress-fill').style.width=pct+'%';
+  document.getElementById('progress-count').textContent=(currentQ+1)+' of '+questions.length;
+  document.getElementById('category-label').textContent=questions[currentQ].category+' Health';
+  categories.forEach((c,i)=>{
+    const el=document.getElementById('prog-cat-'+i);
+    const firstIdx=questions.findIndex(q=>q.category===c);
+    const lastIdx=firstIdx+questions.filter(q=>q.category===c).length-1;
+    if(currentQ>lastIdx)el.className='prog-cat done';
+    else if(currentQ>=firstIdx)el.className='prog-cat active';
+    else el.className='prog-cat';
   });
 }
 
-function showQuestion(idx) {
-  const q = questions[idx];
+function showQuestion(idx){
+  const q=questions[idx];
   updateProgress();
-
-  const card = document.getElementById('question-card');
-  card.innerHTML = `
+  document.getElementById('question-card').innerHTML=`
     <div class="q-category">${q.icon} ${q.category}</div>
-    <div class="q-number">Question ${idx + 1} of ${questions.length}</div>
+    <div class="q-number">Question ${idx+1} of ${questions.length}</div>
     <div class="q-text">${q.text}</div>
-    <div class="options">
-      ${q.options.map((opt, i) => `
-        <div class="option ${answers[idx] === i ? 'selected' : ''}" onclick="selectOption(${i})">
-          <div class="option-radio"></div>
-          <div class="option-text">${opt.text}</div>
-        </div>
-      `).join('')}
-    </div>
-  `;
-
-  document.getElementById('btn-prev').disabled = idx === 0;
-  document.getElementById('btn-next').disabled = answers[idx] === undefined;
-  document.getElementById('btn-next').textContent = idx === questions.length - 1 ? 'See My Results →' : 'Next →';
+    <div class="options">${q.options.map((opt,i)=>`
+      <div class="option ${answers[idx]===i?'selected':''}" onclick="selectOption(${i})">
+        <div class="option-radio"></div>
+        <div class="option-text">${opt.text}</div>
+      </div>`).join('')}
+    </div>`;
+  document.getElementById('btn-prev').disabled=idx===0;
+  document.getElementById('btn-next').disabled=answers[idx]===undefined;
+  document.getElementById('btn-next').textContent=idx===questions.length-1?'See My Results →':'Next →';
 }
 
-function selectOption(optIdx) {
-  answers[currentQ] = optIdx;
-  document.querySelectorAll('.option').forEach((el, i) => {
-    el.classList.toggle('selected', i === optIdx);
-  });
-  document.getElementById('btn-next').disabled = false;
+function selectOption(optIdx){
+  answers[currentQ]=optIdx;
+  document.querySelectorAll('.option').forEach((el,i)=>el.classList.toggle('selected',i===optIdx));
+  document.getElementById('btn-next').disabled=false;
 }
 
-function nextQuestion() {
-  if (currentQ < questions.length - 1) {
+function nextQuestion(){
+  if(currentQ<questions.length-1){
     currentQ++;
     showQuestion(currentQ);
-    window.scrollTo({ top: document.getElementById('quiz').offsetTop - 20, behavior: 'smooth' });
+    window.scrollTo({top:document.getElementById('quiz').offsetTop-20,behavior:'smooth'});
   } else {
     showOptinGate();
   }
 }
 
-function showOptinGate() {
-  document.getElementById('quiz').style.display = 'none';
-  const gate = document.getElementById('optin-gate');
-  gate.style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function prevQuestion(){
+  if(currentQ>0){currentQ--;showQuestion(currentQ);}
+}
 
-  document.getElementById('optin-form').addEventListener('submit', async function(e) {
+function showOptinGate(){
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('optin-gate').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('optin-form').addEventListener('submit',async function(e){
     e.preventDefault();
-    const name = this.name.value;
-    const email = this.email.value;
-
-    try {
-      await fetch('https://formspree.io/f/mlgozgpg', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ name, email })
+    try{
+      await fetch('https://formspree.io/f/mlgozgpg',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body:JSON.stringify({name:this.name.value,email:this.email.value})
       });
-    } catch(err) {
-      console.log('Form submission error', err);
-    }
-
-    gate.style.display = 'none';
+    }catch(err){console.log(err);}
+    document.getElementById('optin-gate').style.display='none';
     showResults();
   });
 }
 
-function prevQuestion() {
-  if (currentQ > 0) {
-    currentQ--;
-    showQuestion(currentQ);
+function showResults(){
+  const resultsEl=document.getElementById('results');
+  resultsEl.style.display='block';
+  let totalScore=0,catScores={Revenue:0,Profit:0,'Cash Flow':0},catMax={Revenue:0,Profit:0,'Cash Flow':0};
+  let bleedingAreas=[],strongAreas=[];
+  questions.forEach((q,i)=>{
+    const score=q.options[answers[i]].score;
+    totalScore+=score;catScores[q.category]+=score;catMax[q.category]+=10;
+    if(score<=4)bleedingAreas.push({area:q.area,category:q.category});
+    if(score===10)strongAreas.push({area:q.area,category:q.category});
+  });
+  const pct=Math.round((totalScore/(questions.length*10))*100);
+  let scoreColor,statusTitle,statusSub;
+  if(pct>=80){scoreColor='#155228';statusTitle='Your Business Is Financially Strong';statusSub='You are managing most drivers well. A few optimizations could unlock significant growth.';}
+  else if(pct>=60){scoreColor='#C9962A';statusTitle='Your Business Has Significant Opportunities';statusSub='You are doing some things right but there are clear areas leaking profit and cash.';}
+  else if(pct>=40){scoreColor='#E67E22';statusTitle='Your Business Is Under Financial Stress';statusSub='Multiple financial drivers need immediate attention. The good news: fixing these can transform results fast.';}
+  else{scoreColor='#C0392B';statusTitle='Your Business Is Bleeding Money';statusSub='Critical financial drivers are failing. This requires urgent attention before it becomes a crisis.';}
+  document.getElementById('score-num').textContent=pct;
+  document.getElementById('score-num').style.color=scoreColor;
+  document.getElementById('results-title').textContent=statusTitle;
+  document.getElementById('results-subtitle').textContent=statusSub;
+  const areaEl=document.getElementById('area-results');
+  const icons={Revenue:'📈',Profit:'💰','Cash Flow':'🔄'};
+  Object.entries(catScores).forEach(([cat,score])=>{
+    const max=catMax[cat],catPct=Math.round((score/max)*100);
+    const barColor=catPct>=70?'#155228':catPct>=50?'#C9962A':'#C0392B';
+    const label=catPct>=70?'Strong':catPct>=50?'Needs Work':'Critical';
+    areaEl.innerHTML+=`<div class="area-item"><div class="area-icon">${icons[cat]}</div><div class="area-content"><div class="area-name">${cat} Health — ${catPct}/100</div><div class="area-bar-wrap"><div class="area-bar" style="width:${catPct}%;background:${barColor};"></div></div><div class="area-score-label" style="color:${barColor};">${label}</div></div></div>`;
+  });
+  if(bleedingAreas.length>0){
+    document.getElementById('bleeding-section').style.display='block';
+    const list=document.getElementById('bleeding-list');
+    bleedingAreas.forEach(a=>{list.innerHTML+=`<li><span class="bl-x">X</span> ${a.area} (${a.category}) — needs immediate attention</li>`;});
   }
+  if(strongAreas.length>0){
+    document.getElementById('strong-section').style.display='block';
+    const list=document.getElementById('strong-list');
+    strongAreas.forEach(a=>{list.innerHTML+=`<li><span class="bl-check">+</span> ${a.area} — you are doing this well</li>`;});
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function showResults() {
-  document.getElementById('quiz').style.display = 'none';
-  const resultsEl = document.getElementById('results');
-  resultsEl.style.display = 'block';
-
-  // Calculate scores
-  let totalScore = 0;
-  let catScores = { Revenue: 0, Profit: 0, 'Cash Flow': 0 };
-  let catMax = { Revenue: 0, Profit: 0, 'Cash Flow': 0 };
-  let bleedingAreas = [];
-  let strongAreas = [];
-
-  questions.forEach((q, i) => {
-    const score = q.options[answers[i]].score;
-    totalScore += score;
-    catScores[q.category] += score;
-    catMax[q.category] += 10;
-    if (score <= 4) bleedingAreas.push({ area: q.area, category: q.category, score });
-    if (score === 10) strongAreas.push({ area: q.area, category: q.category });
-  });
-
-  const maxScore = questions.length * 10;
-  const pct = Math.round((totalScore / maxScore) * 100);
-
-  // Score color
-  let scoreColor, statusTitle, statusSub;
-  if (pct >= 80) {
-    scoreColor = '#155228';
-    statusTitle = 'Your Business Is Financially Strong';
-    statusSub = 'You are managing most drivers well. A few optimizations could unlock significant growth.';
-  } else if (pct >= 60) {
-    scoreColor = '#C9962A';
-    statusTitle = 'Your Business Has Significant Opportunities';
-    statusSub = 'You are doing some things right but there are clear areas leaking profit and cash.';
-  } else if (pct >= 40) {
-    scoreColor = '#E67E22';
-    statusTitle = 'Your Business Is Under Financial Stress';
-    statusSub = 'Multiple financial drivers need immediate attention. The good news: fixing these can transform results fast.';
-  } else {
-    scoreColor = '#C0392B';
-    statusTitle = 'Your Business Is Bleeding Money';
-    statusSub = 'Critical financial drivers are failing. This requires urgent attention before it becomes a crisis.';
-  }
-
-  document.getElementById('score-num').textContent = pct;
-  document.getElementById('score-num').style.color = scoreColor;
-  document.getElementById('results-title').textContent = statusTitle;
-  document.getElementById('results-subtitle').textContent = statusSub;
-
-  // Area breakdown
-  const areaEl = document.getElementById('area-results');
-  Object.entries(catScores).forEach(([cat, score]) => {
-    const max = catMax[cat];
-    const catPct = Math.round((score / max) * 100);
-    let barColor = catPct >= 70 ? '#155228' : catPct >= 50 ? '#C9962A' : '#C0392B';
-    let label = catPct >= 70 ? 'Strong' : catPct >= 50 ? 'Needs Work' : 'Critical';
-    let labelColor = barColor;
-    const icons = { Revenue: '📈', Profit: '💰', 'Cash Flow': '🔄' };
-    areaEl.innerHTML += `
-      <div class="area-item">
-        <div class="area-icon">${icons[cat]}</div>
-        <div class="area-content">
-          <div class="area-name">${cat} Health — ${catPct}/100</div>
-          <div class="area-bar-wrap">
-            <div class="area-bar" style="width:${catPct}%;background:${barColor};"></div>
-          </div>
-          <div class="area-score-label" style="color:${labelColor};">${label}</div>
-        </div>
-      </div>
-    `;
-  });
-
-  // Bleeding areas
-  if (bleedingAreas.length > 0) {
-    document.getElementById('bleeding-section').style.display = 'block';
-    const list = document.getElementById('bleeding-list');
-    bleedingAreas.forEach(a => {
-      list.innerHTML += `<li><span class="bl-x">X</span> ${a.area} (${a.category}) — needs immediate attention</li>`;
-    });
-  }
-
-  // Strong areas
-  if (strongAreas.length > 0) {
-    document.getElementById('strong-section').style.display = 'block';
-    const list = document.getElementById('strong-list');
-    strongAreas.forEach(a => {
-      list.innerHTML += `<li><span class="bl-check">+</span> ${a.area} — you are doing this well</li>`;
-    });
-  }
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function retakeQuiz() {
-  currentQ = 0;
-  answers = [];
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('area-results').innerHTML = '';
-  document.getElementById('bleeding-list').innerHTML = '';
-  document.getElementById('strong-list').innerHTML = '';
-  document.getElementById('bleeding-section').style.display = 'none';
-  document.getElementById('strong-section').style.display = 'none';
-  document.getElementById('quiz').style.display = 'block';
-  showQuestion(0);
+function retakeQuiz(){
+  currentQ=0;answers=[];
+  document.getElementById('results').style.display='none';
+  document.getElementById('area-results').innerHTML='';
+  document.getElementById('bleeding-list').innerHTML='';
+  document.getElementById('strong-list').innerHTML='';
+  document.getElementById('bleeding-section').style.display='none';
+  document.getElementById('strong-section').style.display='none';
+  document.getElementById('intro').style.display='block';
 }
 </script>
 </body>
