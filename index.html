@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Is Your Business Bleeding Money? Free SMB Health Scorecard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:100vh;}
@@ -382,7 +389,8 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
   .header{padding:16px 20px;}
 }
 </style>
-</style>
+</head>
+<body>
 
 <div class="header">
   <div class="header-brand">
@@ -419,7 +427,28 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
         <div class="intro-feature"><span class="if-icon">🎯</span><div class="if-text">Get a personalized action plan</div></div>
       </div>
       <button class="start-btn" onclick="startQuiz()">Start My Free Assessment →</button>
-      <div class="intro-note">Takes 3 minutes. No email required to see your score.</div>
+      <div class="intro-note">Takes 3 minutes. Enter your email to unlock your full score.</div>
+    </div>
+  </div>
+
+  <!-- OPTIN GATE -->
+  <div class="optin-gate" id="optin-gate">
+    <div class="results-header">
+      <div class="score-circle" style="border-color:rgba(255,255,255,0.3)">
+        <span style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:var(--gold);">🔒</span>
+      </div>
+      <div class="results-title" style="color:#fff;">Your Score Is Ready!</div>
+      <div class="results-subtitle" style="color:rgba(255,255,255,0.75);">Enter your details below to unlock your full financial health report.</div>
+    </div>
+    <div class="optin-body">
+      <h3>Where should we send your results?</h3>
+      <p>Get your personalized SMB Financial Health Score plus a breakdown of exactly where your business is strong and where it is bleeding.</p>
+      <form class="optin-form" id="optin-form">
+        <input class="optin-input" type="text" name="name" placeholder="Your First Name" required />
+        <input class="optin-input" type="email" name="email" placeholder="Your Business Email" required />
+        <button class="optin-submit" type="submit">Unlock My Results 2192</button>
+        <div class="optin-note">🔒 No spam. Your results are private.</div>
+      </form>
     </div>
   </div>
 
@@ -466,9 +495,9 @@ body{font-family:'Nunito',sans-serif;background:#f5f0e8;color:#111;min-height:10
     </div>
     <div class="results-cta">
       <h2>Ready to Stop the Bleeding<br>in <em>Your</em> Business?</h2>
-      <p>Book a FREE 30-Minute Consultation with our Certified CFO Advisor. We'll look at your specific numbers, make sure we're the right fit, and show you exactly what we'll do to build a growing and more profitable business.</p>
+      <p>Book a FREE Consultation with our Certified CFO Advisor. We'll look at your specific numbers, make sure we're the right fit, and show you exactly what we'll do to build a growing and more profitable business.</p>
       <button class="cta-btn" onclick="window.open('https://calendly.com/noel-truenorthfinancegroup/20-minute-right-fit-call?month=2026-03','_blank')">
-        📅 Yes, I'm Ready For a Clarity Call
+        📅 YES, I'm Ready For My Clarity Call 
       </button>
       <br>
       <button class="retake-btn" onclick="retakeQuiz()">Retake the Assessment</button>
@@ -708,8 +737,34 @@ function nextQuestion() {
     showQuestion(currentQ);
     window.scrollTo({ top: document.getElementById('quiz').offsetTop - 20, behavior: 'smooth' });
   } else {
-    showResults();
+    showOptinGate();
   }
+}
+
+function showOptinGate() {
+  document.getElementById('quiz').style.display = 'none';
+  const gate = document.getElementById('optin-gate');
+  gate.style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  document.getElementById('optin-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const name = this.name.value;
+    const email = this.email.value;
+
+    try {
+      await fetch('https://formspree.io/f/mlgozgpg', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+    } catch(err) {
+      console.log('Form submission error', err);
+    }
+
+    gate.style.display = 'none';
+    showResults();
+  });
 }
 
 function prevQuestion() {
@@ -825,3 +880,5 @@ function retakeQuiz() {
   showQuestion(0);
 }
 </script>
+</body>
+</html>
